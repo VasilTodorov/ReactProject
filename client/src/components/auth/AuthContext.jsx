@@ -6,7 +6,6 @@ export const AuthContext = createContext({
     user: {},
     accessToken: '',
     isAuthenticated: false,
-    loading: true,
     loginHandler () {},
     registerHandler () {},
     logoutHandler () {}
@@ -26,7 +25,7 @@ export function AuthProvider({ children }) {
 
         const parsedAuth = JSON.parse(storedAuth);
 
-        if (parsedAuth.user && parsedAuth.token) {
+        if (parsedAuth.user && parsedAuth.accessToken) {
             dispatch({
                 type: "LOAD_USER",
                 payload: {
@@ -49,9 +48,7 @@ export function AuthProvider({ children }) {
             accessToken: state.accessToken
             })
         );
-        } else {
-        localStorage.removeItem("auth");
-        }
+        } 
     }, [state.isAuthenticated, state.user, state.accessToken]);
 
     const loginHandler = async (credentials) => {
@@ -119,6 +116,8 @@ export function AuthProvider({ children }) {
                 type: "LOGIN_SUCCESS",
                 payload: {
                 user: {
+                    fullName: data.fullName,
+                    skills: data.skills,
                     id: data._id,
                     email: data.email
                 },
@@ -135,13 +134,13 @@ export function AuthProvider({ children }) {
 
     const logoutHandler = () => {
         dispatch({ type: "LOGOUT" });
+        localStorage.removeItem("auth");
     };
 
     const valueData = {
     user: state.user,
     accessToken: state.accessToken,
     isAuthenticated: state.isAuthenticated,
-    loading: state.loading,
     loginHandler,
     registerHandler,
     logoutHandler

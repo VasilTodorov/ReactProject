@@ -4,13 +4,19 @@ import { Link } from "react-router";
 //import LogInModal from "../login/LoginModal.jsx";
 import AuthFlowModal from "../authFlow/AuthFlowModal.jsx";
 import CloseContext from "../../contexts/close/CloseContext.js";
+import { useAuth } from "../auth/AuthContext.jsx";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { isAuthenticated, user, logoutHandler } = useAuth()
 
   const onCloseHandler = () => {
     setIsModalOpen(false);
+  }
+
+  const onOpenHandler = () => {
+    setIsModalOpen(true);
   }
 
   return (
@@ -45,12 +51,21 @@ export default function Header() {
                 />
               </svg>
             </a> */}
-            <button
-              className="rounded-lg border-2 border-white px-4 py-2 text-sm font-medium text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 focus:outline-none sm:mr-2 lg:px-5 lg:py-2.5 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-              onClick={() => setIsModalOpen(true)}
-            >
-              Log in / Sign up
-            </button>
+            {!isAuthenticated                  
+                ?   <button
+                        className="rounded-lg border-2 border-white px-4 py-2 text-sm font-medium text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 focus:outline-none sm:mr-2 lg:px-5 lg:py-2.5 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                        onClick={onOpenHandler}
+                        >
+                        Log in / Sign up 
+                    </button>  
+                :   <button
+                        className="rounded-lg border-2 border-white px-4 py-2 text-sm font-medium text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 focus:outline-none sm:mr-2 lg:px-5 lg:py-2.5 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                        onClick={logoutHandler}
+                        >
+                        Log out {user.email}
+                    </button>
+            }
+            
 
             {/* Mobile menu button */}
             <button
@@ -73,12 +88,12 @@ export default function Header() {
           >
             <ul className="mt-4 flex flex-col font-medium lg:mt-0 lg:flex-row lg:space-x-8">
               <li>
-                <a
+                <Link
                   className="block border-b border-gray-700 py-2 pr-4 pl-3 text-gray-400 hover:bg-gray-700 hover:text-white lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-purple-700"
-                  href="/"
+                  to="/"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
                 <a
