@@ -3,7 +3,7 @@ import { useAuth } from "../auth/AuthContext";
 //import { login, register } from "../auth/authActions";
 
 export default function Login() {
-  const { loginHandler, dispatch } = useAuth();
+  const { loginHandler } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

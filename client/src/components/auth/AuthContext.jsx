@@ -91,7 +91,8 @@ export function AuthProvider({ children }) {
             throw err;
         }
     };
-    const registerHandler = async (data) => {
+    const registerHandler = async (myData) => {
+        console.log("start of registration");
         try {
             const response = await fetch(
                 "http://localhost:3030/users/register",
@@ -99,11 +100,14 @@ export function AuthProvider({ children }) {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    email: data.email,
-                    password: data.password
+                    fullName: myData.fullName,
+                    email: myData.email,
+                    skills: myData.skills,
+                    password: myData.password
                 })
                 }
             );
+            console.log("finished registration fetch");
             //console.log('LOGIN RESPONSE STATUS:', response.status);
             if (!response.ok) {
                     throw response.statusText;
