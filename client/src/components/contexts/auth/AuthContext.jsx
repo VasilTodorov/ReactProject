@@ -6,9 +6,10 @@ export const AuthContext = createContext({
     user: {},
     accessToken: '',
     isAuthenticated: false,
+    loading: false,
     loginHandler () {},
     registerHandler () {},
-    logoutHandler () {}
+    logoutHandler () {},
 });
 
 export function AuthProvider({ children }) {
@@ -75,8 +76,7 @@ export function AuthProvider({ children }) {
                 type: "LOGIN_SUCCESS",
                 payload: {
                 user: {
-                    id: data._id,
-                    email: data.email
+                    ...data
                 },
                 accessToken: data.accessToken 
                 }
@@ -97,6 +97,7 @@ export function AuthProvider({ children }) {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
+                    
                     fullName: myData.fullName,
                     email: myData.email,
                     skills: myData.skills,
@@ -131,7 +132,7 @@ export function AuthProvider({ children }) {
             throw err;
         }
     };
-
+    
     const logoutHandler = () => {
         dispatch({ type: "LOGOUT" });
         localStorage.removeItem("auth");
@@ -141,6 +142,7 @@ export function AuthProvider({ children }) {
     user: state.user,
     accessToken: state.accessToken,
     isAuthenticated: state.isAuthenticated,
+    loading: state.loading,
     loginHandler,
     registerHandler,
     logoutHandler

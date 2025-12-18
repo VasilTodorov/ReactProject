@@ -3,7 +3,9 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { AuthContext,useAuth } from '../contexts/auth/AuthContext'
 import { Link } from "react-router";
 
-export default function UserMenu() {
+export default function UserMenu({
+  onOpenHandler
+}) {
     const {user, logoutHandler} = useAuth(AuthContext);
   return (
     <Menu as="div" className="relative inline-block">
@@ -19,7 +21,7 @@ export default function UserMenu() {
         <div className="py-1">
           <MenuItem>
             <Link
-              href="#"
+               
               className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden"
             >
               Edit
@@ -27,10 +29,10 @@ export default function UserMenu() {
           </MenuItem>
           <MenuItem>
             <Link
-              href="#"
+              to="/Profile"
               className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden"
             >
-              Details
+              Profile
             </Link>
           </MenuItem>
         </div>

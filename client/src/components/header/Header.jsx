@@ -6,11 +6,12 @@ import AuthFlowModal from "../authFlow/AuthFlowModal.jsx";
 import CloseContext from "../contexts/close/CloseContext.js";
 import { useAuth } from "../contexts/auth/AuthContext.jsx";
 import UserMenu from "../dropdown/UserMenu.jsx";
+import SmallSpinner from "../spineer/SmallSpinner.jsx";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { isAuthenticated, user, logoutHandler } = useAuth()
+  const { isAuthenticated, user, logoutHandler, loading } = useAuth()
 
   const onCloseHandler = () => {
     setIsModalOpen(false);
@@ -34,7 +35,9 @@ export default function Header() {
           {/* Right buttons */}
           <div className="flex items-center lg:order-2">
             
-            {!isAuthenticated                  
+            {loading 
+                ?   <SmallSpinner/>
+                : !isAuthenticated                  
                 ?   <button
                     onClick={onOpenHandler}
                     className="rounded-lg border-2 border-white px-4 py-2 text-sm font-medium text-white
@@ -44,7 +47,7 @@ export default function Header() {
                     >
                     Log in / Sign up
                     </button>                  
-                    : <UserMenu/>
+                    : <UserMenu />
                     
             }
             

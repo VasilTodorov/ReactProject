@@ -3,8 +3,11 @@ import { useState } from "react";
 import SignUpModal from "./SignUpModal";
 import { useContext } from "react";
 import CloseContext from "../contexts/close/CloseContext";
+import { useAuth } from "../contexts/auth/AuthContext";
+import EditModal from "./EditModal";
 
 export default function AuthFlowModal() {
+    const { isAuthenticated } = useAuth();
     const [isSignUp, setIsSignUp] = useState(false);
     const onCloseHandler = useContext(CloseContext);
 
@@ -13,6 +16,10 @@ export default function AuthFlowModal() {
         onCloseHandler();
         }
     };
+
+    const toggleClickHandler = () => {
+        setIsSignUp(!isSignUp)
+    }
     return (
         <div
           onClick={backdropClickHandler}
@@ -25,27 +32,27 @@ export default function AuthFlowModal() {
               className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-xl font-bold"
             >
               &times;
-            </button>
-
+            </button>                                                                                                                        
+            
             {/* Toggle button inside modal */}
             <div className="flex justify-center mb-6">
-            <button
-                onClick={() => setIsSignUp(!isSignUp)}
-                className="px-4 py-2 bg-purple-100 text-purple-700 font-medium rounded-full hover:bg-purple-200 transition-colors duration-200"
-            >
-                {isSignUp ? "Switch to Log In" : "Switch to Sign Up"}
-            </button>
+                <button
+                    onClick={toggleClickHandler}
+                    className="px-4 py-2 bg-purple-100 text-purple-700 font-medium rounded-full hover:bg-purple-200 transition-colors duration-200"
+                        >
+                        {isSignUp ? "Switch to Log In" : "Switch to Sign Up"}
+                </button>
             </div>
 
-            {/* Log In Form */}
-            {!isSignUp && (
-                <LogInModal/>
-            )}
+                {/* Log In Form */}
+                {!isSignUp && 
+                    <LogInModal/>
+                }
 
-            {/* Sign Up Form */}
-            {isSignUp && (
-                <SignUpModal/>
-            )}
+                {/* Sign Up Form */}
+                {isSignUp && (
+                    <SignUpModal/>
+                )}
           </div>
         </div>
     );
