@@ -18,56 +18,56 @@ export default function UserMenu() {
       >
         <div className="py-1">
           <MenuItem>
-            <a
+            <Link
               href="#"
               className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden"
             >
               Edit
-            </a>
+            </Link>
           </MenuItem>
           <MenuItem>
-            <a
+            <Link
               href="#"
               className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden"
             >
               Details
-            </a>
+            </Link>
           </MenuItem>
         </div>
         <div className="py-1">
           <MenuItem>
-            <a
+            <Link
               href="#"
               className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden"
             >
               Archive
-            </a>
+            </Link>
           </MenuItem>
           <MenuItem>
-            <a
+            <Link
               href="#"
               className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden"
             >
               Move
-            </a>
+            </Link>
           </MenuItem>
         </div>
         <div className="py-1">
           <MenuItem>
-            <a
+            <Link
               href="#"
               className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden"
             >
               Share
-            </a>
+            </Link>
           </MenuItem>
           <MenuItem>
-            <a
+            <Link
               href="#"
               className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden"
             >
               Add to favorites
-            </a>
+            </Link>
           </MenuItem>
         </div>
         <div className="py-1">
