@@ -25,10 +25,13 @@ export default function About() {
     <div className="w-full md:w-1/2">
       <h2 className="text-4xl font-bold mb-4 border-b-4 border-blue-500 inline-block">About Us</h2>
       <p className="mb-4 text-gray-300 leading-relaxed">
-        We are committed to delivering innovative solutions with a focus on quality and customer satisfaction. Our team of experts works tirelessly to bring your ideas to life and help your business grow.
+        SkillSwap is a community-driven platform where users can share their skills and learn from others. Our goal is to connect people who want to teach, practice, and grow together, making learning more accessible and collaborative.
       </p>
       <p className="mb-4 text-gray-300 leading-relaxed">
-        Join us on our journey to make a difference in the industry through creativity, dedication, and excellence.
+        Whether you want to offer your expertise in music, programming, design, or languages, or discover new skills from others, SkillSwap provides an easy and secure way to connect, learn, and share knowledge.
+      </p>
+      <p className="mb-4 text-gray-300 leading-relaxed">
+        This application demonstrates modern web technologies including React.js, client-side routing, authentication, and CRUD operations, with a focus on usability and responsive design.
       </p>
       <a href="#contact" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
         Contact Us

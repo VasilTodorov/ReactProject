@@ -1,0 +1,90 @@
+[
+  {
+    "id": "1",
+    "title": "Beginner Guitar Lessons",
+    "category": "Music",
+    "description": "Learn basic guitar chords, strumming patterns, and simple songs. Perfect for absolute beginners.",
+    "availability": "Weekends",
+    "location": "Online",
+    "authorId": "user_101",
+    "authorEmail": "guitar.teacher@mail.com",
+    "likes": 12,
+    "comments": [
+      {
+        "id": "c1",
+        "author": "john@mail.com",
+        "text": "Great explanation and very patient teacher!"
+      }
+    ],
+    "createdAt": "2025-12-01T10:30:00Z"
+  },
+  {
+    "id": "2",
+    "title": "JavaScript Fundamentals Help",
+    "category": "Programming",
+    "description": "I can help you understand JavaScript basics such as variables, functions, loops, and arrays.",
+    "availability": "Evenings",
+    "location": "Online",
+    "authorId": "user_102",
+    "authorEmail": "js.mentor@mail.com",
+    "likes": 20,
+    "comments": [
+      {
+        "id": "c2",
+        "author": "student@mail.com",
+        "text": "Finally understood closures. Highly recommended!"
+      },
+      {
+        "id": "c3",
+        "author": "learner@mail.com",
+        "text": "Very clear explanations and examples."
+      }
+    ],
+    "createdAt": "2025-12-02T15:45:00Z"
+  },
+  {
+    "id": "3",
+    "title": "English Conversation Practice",
+    "category": "Languages",
+    "description": "Improve your spoken English through friendly conversation and practical exercises.",
+    "availability": "Weekdays after 18:00",
+    "location": "Online",
+    "authorId": "user_103",
+    "authorEmail": "english.coach@mail.com",
+    "likes": 8,
+    "comments": [],
+    "createdAt": "2025-12-03T09:15:00Z"
+  },
+  {
+    "id": "4",
+    "title": "Basic Photoshop Editing",
+    "category": "Design",
+    "description": "Learn photo retouching, color correction, and basic graphic design using Adobe Photoshop.",
+    "availability": "Flexible",
+    "location": "Online",
+    "authorId": "user_104",
+    "authorEmail": "designer@mail.com",
+    "likes": 15,
+    "comments": [
+      {
+        "id": "c4",
+        "author": "photo@mail.com",
+        "text": "Helped me improve my Instagram photos a lot!"
+      }
+    ],
+    "createdAt": "2025-12-04T11:00:00Z"
+  },
+  {
+    "id": "5",
+    "title": "Math Tutoring for High School",
+    "category": "Education",
+    "description": "Support with algebra, geometry, and exam preparation for high school students.",
+    "availability": "Weekends",
+    "location": "In-person / Online",
+    "authorId": "user_105",
+    "authorEmail": "math.tutor@mail.com",
+    "likes": 5,
+    "comments": [],
+    "createdAt": "2025-12-05T14:20:00Z"
+  }
+]

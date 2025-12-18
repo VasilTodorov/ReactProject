@@ -2,7 +2,7 @@ import LogInModal from "./LogInModal";
 import { useState } from "react";
 import SignUpModal from "./SignUpModal";
 import { useContext } from "react";
-import CloseContext from "../../contexts/close/CloseContext";
+import CloseContext from "../contexts/close/CloseContext";
 
 export default function AuthFlowModal() {
     const [isSignUp, setIsSignUp] = useState(false);
