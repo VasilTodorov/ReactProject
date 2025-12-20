@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import ProfileItem from "./ProfileItem";
 import { useAuth } from "../../contexts/auth/AuthContext";
-import request from "../../utils/request";
 
 const initialDraft = {
         fullName: "",

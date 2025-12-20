@@ -1346,95 +1346,49 @@
     	}
     };
     var seedData = {
-        skills: {
-  "1" : {
-    "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-    "title": "Beginner Guitar Lessons",
-    "category": "Music",
-    "description": "Learn basic guitar chords, strumming patterns, and simple songs. Perfect for absolute beginners.",
-    "availability": "Weekends",
-    "location": "Online",
-    "authorId": "user_101",
-    "authorEmail": "guitar.teacher@mail.com",
-    "likes": 12,
-    "comments": [
-      {
-        "id": "c1",
-        "author": "john@mail.com",
-        "text": "Great explanation and very patient teacher!"
-      }
-    ],
-    "createdAt": "2025-12-01T10:30:00Z"
-  },
-  "2" : {
-    "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-    "title": "JavaScript Fundamentals Help",
-    "category": "Programming",
-    "description": "I can help you understand JavaScript basics such as variables, functions, loops, and arrays.",
-    "availability": "Evenings",
-    "location": "Online",
-    "authorId": "user_102",
-    "authorEmail": "js.mentor@mail.com",
-    "likes": 20,
-    "comments": [
-      {
-        "id": "c2",
-        "author": "student@mail.com",
-        "text": "Finally understood closures. Highly recommended!"
-      },
-      {
-        "id": "c3",
-        "author": "learner@mail.com",
-        "text": "Very clear explanations and examples."
-      }
-    ],
-    "createdAt": "2025-12-02T15:45:00Z"
-  },
-  "3" : {
-    "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-    "title": "English Conversation Practice",
-    "category": "Languages",
-    "description": "Improve your spoken English through friendly conversation and practical exercises.",
-    "availability": "Weekdays after 18:00",
-    "location": "Online",
-    "authorId": "user_103",
-    "authorEmail": "english.coach@mail.com",
-    "likes": 8,
-    "comments": [],
-    "createdAt": "2025-12-03T09:15:00Z"
-  },
-  "4" : {
-    "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-    "title": "Basic Photoshop Editing",
-    "category": "Design",
-    "description": "Learn photo retouching, color correction, and basic graphic design using Adobe Photoshop.",
-    "availability": "Flexible",
-    "location": "Online",
-    "authorId": "user_104",
-    "authorEmail": "designer@mail.com",
-    "likes": 15,
-    "comments": [
-      {
-        "id": "c4",
-        "author": "photo@mail.com",
-        "text": "Helped me improve my Instagram photos a lot!"
-      }
-    ],
-    "createdAt": "2025-12-04T11:00:00Z"
-  },
-  "5" : {
-    "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-    "title": "Math Tutoring for High School",
-    "category": "Education",
-    "description": "Support with algebra, geometry, and exam preparation for high school students.",
-    "availability": "Weekends",
-    "location": "In-person / Online",
-    "authorId": "user_105",
-    "authorEmail": "math.tutor@mail.com",
-    "likes": 5,
-    "comments": [],
-    "createdAt": "2025-12-05T14:20:00Z"
-  }
+        skills: {            
+            "1a2b3c4d" : {
+                "_id": "1a2b3c4d",
+                "_ownerId" : "847ec027-f659-4086-8032-5173e2f9c93a",
+                "title": "Beginner Guitar Lessons",
+                "description": "Learn the basics of guitar playing, including chords, strumming patterns, and simple songs.",
+                "category": "Music",
+                "date": "Mar 16, 2024",
+                "datetime": "2024-03-16",
+                "author": {
+                    "name": "Alex Johnson",
+                    "email": "alex.johnson@example.com",
+                    "urlProfile": "/profile/alex-johnson"
+                }
+            },
+            "5e6f7g8h" : {
+                "_id": "5e6f7g8h",
+                "title": "React Fundamentals",
+                "_ownerId" : "847ec027-f659-4086-8032-5173e2f9c93a",
+                "description": "Understand components, props, state, hooks, and how to build modern React applications.",
+                "category": "Web Development",
+                "date": "Apr 02, 2024",
+                "datetime": "2024-04-02",
+                "author": {
+                    "name": "Maria Gomez",
+                    "email": "maria.gomez@example.com",
+                    "urlProfile": "/profile/maria-gomez"
+                }
+            },
+            "9i0j1k2l" : {
+                "_id": "9i0j1k2l",
+                "_ownerId" : "847ec027-f659-4086-8032-5173e2f9c93a",
+                "title": "UI/UX Design Basics",
+                "description": "Learn design principles, wireframing, and user-centered design techniques.",
+                "category": "Design",
+                "date": "May 10, 2024",
+                "datetime": "2024-05-10",
+                "author": {
+                    "name": "Tom Cook",
+                    "email": "tom.cook@example.com",
+                    "urlProfile": "/profile/tom-cook"
+                }
+            }
         },
         profiles: {}
     };
