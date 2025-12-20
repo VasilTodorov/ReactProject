@@ -11,6 +11,7 @@ export const AuthContext = createContext({
     loginHandler () {},
     registerHandler () {},
     logoutHandler () {},
+    updateProfileHandler () {},
 });
 
 export function AuthProvider({ children }) {
@@ -62,17 +63,34 @@ export function AuthProvider({ children }) {
                                             password: credentials.password
                                         });
 
-            dispatch({
+            try{
+                const query = encodeURIComponent(
+                `_ownerId="${data._id}"`
+                );
+                const dataProfile = await request(`data/profiles?where=${query}`)
+
+                dispatch({
                 type: "LOGIN_SUCCESS",
                 payload: {
-                user: {
-                    ...data
+                user: {                   
+                    ...data,
+                    profile: dataProfile[0]
                 },
                 accessToken: data.accessToken 
                 }
-            });
-            
-            return data;
+                });
+                
+                return {                   
+                    ...data,
+                    profile: dataProfile[0]
+                };
+            }
+            catch (err)
+            {
+                console.log("couldn't create profile for user")
+                await request("users/logout", "GET", null, dataToRegister.accessToken, false);               
+                throw err;
+            }
 
         }   catch (err) {
             console.log("couldn't log in")
@@ -106,9 +124,8 @@ export function AuthProvider({ children }) {
                 type: "LOGIN_SUCCESS",
                 payload: {
                 user: {                   
-                    id: dataToRegister._id,
-                    email: dataToRegister.email,
-                    profileId: dataProfile._id
+                    ...dataToRegister,
+                    profile: dataProfile
                 },
                 accessToken: dataToRegister.accessToken 
                 }
@@ -144,12 +161,45 @@ export function AuthProvider({ children }) {
         }
         catch (err) {
             console.log("couldn't log out")
+            console.log("Old log out")
+            dispatch({ type: "LOGOUT" });
+            localStorage.removeItem("auth");
             throw err;
         }
-            // console.log("Old log out")
-            // dispatch({ type: "LOGOUT" });
-            // localStorage.removeItem("auth");
+           
     };
+
+    const updateProfileHandler = async (draft) => {
+        //console.log("user: ", state.user);
+        if(state.isAuthenticated && state.user?.profile)
+        {
+            try{
+                //console.log("start of update")
+                const profileData = await request(`data/profiles/${state.user.profile._id}`, "PATCH", draft, state.accessToken);
+                //console.log("My updated profileData: ",profileData )
+                let updatedUser = {...state.user, profile: profileData};
+                //console.log("My updated user: ",updatedUser )
+                dispatch({
+                type: "LOAD_USER",
+                payload: {
+                    user: updatedUser,
+                    accessToken: state.accessToken
+                }
+                });
+                return profileData;
+            }
+            catch (error)
+            {
+                console.error("Failed to update profile:", error);
+                throw error
+            }
+        }
+        else 
+        {
+            return null;
+        }
+        
+    }
 
     const valueData = {
     user: state.user,
@@ -158,7 +208,8 @@ export function AuthProvider({ children }) {
     loading: state.loading,
     loginHandler,
     registerHandler,
-    logoutHandler
+    logoutHandler,
+    updateProfileHandler,
     };
     return (
         <AuthContext.Provider value={valueData}>

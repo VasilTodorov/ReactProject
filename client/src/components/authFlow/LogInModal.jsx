@@ -43,12 +43,14 @@ export default function LogInModal() {
                     placeholder="Email"
                     value={state.email}
                     onChange={onChangeHandler}
+                    autoComplete="email"
                     className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600"
                   />
                   <input
                     type="password"
                     name="password"
                     placeholder="Password"
+                    autoComplete="current-password"
                     value={state.password}
                     onChange={onChangeHandler}
                     className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600"

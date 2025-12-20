@@ -63,6 +63,7 @@ export default function SignUpModal() {
                         placeholder="Full Name"
                         value={state.fullName}
                         onChange={onChangeHandler}
+                        autoComplete="name"
                         className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600"
                     />
                     <input
@@ -71,6 +72,7 @@ export default function SignUpModal() {
                         placeholder="Email"
                         value={state.email}
                         onChange={onChangeHandler}
+                        autoComplete="email"
                         className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600"
                     />
                     <textarea
@@ -79,6 +81,7 @@ export default function SignUpModal() {
                         value={state.description}
                         onChange={onChangeHandler}
                         rows={4}
+                        autoComplete="off"
                         className="border rounded px-3 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-purple-600"
                     />
                     
@@ -88,6 +91,7 @@ export default function SignUpModal() {
                         value={state.password}
                         onChange={onChangeHandler}
                         placeholder="Password"
+                        autoComplete="new-password"
                         className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600"
                     />
                     
@@ -97,6 +101,7 @@ export default function SignUpModal() {
                         value={state.confirmPassword}
                         onChange={onChangeHandler}
                         placeholder="Confirm Password"
+                        autoComplete="new-password"
                         className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600"
                     />
                     <button

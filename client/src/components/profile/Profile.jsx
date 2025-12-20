@@ -3,66 +3,35 @@ import ProfileItem from "./ProfileItem";
 import { useAuth } from "../../contexts/auth/AuthContext";
 import request from "../../utils/request";
 
-
-export default function Profile() {
-    const {user, accessToken} = useAuth();
-    const [isEditing, setIsEditing] = useState(false);
-    const [profile, setProfile] = useState({
+const initialDraft = {
         fullName: "",
         email: "",
         phone: "",
         address: "",
-    });
-    const [draft, setDraft] = useState(profile);
+    }
+export default function Profile() {
+    const {user, accessToken, updateProfileHandler} = useAuth();
+    const [isEditing, setIsEditing] = useState(false);
+    
+    
+    const [draft, setDraft] = useState(initialDraft);
 
     useEffect(() => {
-        if (!user?.profileId) return;
-        const controller = new AbortController();
-        const signal = controller.signal;
-
-        const loadProfile = async () => {
-            
-
-            try {
-                
-            const profileData = await request(`data/profiles/${user.profileId}`, "Get", null, null, true, signal);
-
-            setProfile(profileData);
-            setDraft(profileData); // keep draft in sync
-            } catch (error) {
-                if (error.name === "AbortError") return;
-                console.error("Failed to load profile:", error);
-            }
-           
-        };
-
-        loadProfile();
-
-        return () => {
-                controller.abort();
-            }
-    }, [user?.profileId]);
+        setDraft(user.profile)
+    }, [user?.profile])
 
     const onChangeHandler = (e) => {
         const { name, value } = e.target;
         setDraft((prev) => ({ ...prev, [name]: value }));
     };
 
-    const handleSave = async () => {
-        console.log("token: ", accessToken)
-        try{
-            const profileData = await request(`data/profiles/${user.profileId}`, "PATCH", draft, accessToken);
-        }
-        catch (error)
-        {
-            console.error("Failed to update profile:", error);
-        }
-        setProfile(draft);
+    const handleSave = async () => {        
+        const profileData = await updateProfileHandler(draft)
         setIsEditing(false);
     };
 
     const handleCancel = () => {
-        setDraft(profile);
+        setDraft(user.profile);
         setIsEditing(false);
     };
 
@@ -95,7 +64,7 @@ export default function Profile() {
                 name={"fullName"}
                 draftValue={draft.fullName}
                 onChange={onChangeHandler}
-                profileValue={profile.fullName}
+                profileValue={user.profile.fullName}
                 isEditing={isEditing}
                 title = {"Full name"}/>
 
@@ -112,7 +81,7 @@ export default function Profile() {
                 name={"age"}
                 draftValue={draft.age}
                 onChange={onChangeHandler}
-                profileValue={profile.age}
+                profileValue={user.profile.age}
                 isEditing={isEditing}
                 title={"Age"}/>    
                 
@@ -122,7 +91,7 @@ export default function Profile() {
                 name={"phone"}
                 draftValue={draft.phone}
                 onChange={onChangeHandler}
-                profileValue={profile.phone}
+                profileValue={user.profile.phone}
                 isEditing={isEditing}
                 title={"Phone number"}/>
 
@@ -132,14 +101,14 @@ export default function Profile() {
                 name={"address"}
                 draftValue={draft.address}
                 onChange={onChangeHandler}
-                profileValue={profile.address}
+                profileValue={user.profile.address}
                 isEditing={isEditing}
                 title={"Address"}/>
             <ProfileItem 
                 name={"description"}
                 draftValue={draft.description}
                 onChange={onChangeHandler}
-                profileValue={profile.description}
+                profileValue={user.profile.description}
                 isEditing={isEditing}
                 title={"Skill Description"}
                 type= {"textarea"}/>

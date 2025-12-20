@@ -6,6 +6,7 @@ import About from "./components/about/About"
 import Profile from "./components/profile/Profile"
 import IsAuthenticated from "./components/route-guard/IsAuthenticated"
 import WindowSpinner from "./components/spineers/WindowSpinner";
+import Blog from "./components/blog/Blog"
 
 function App() {
     //const [count, setCount] = useLocalStorage(0)
@@ -22,6 +23,7 @@ function App() {
                 </Route>
                 
                 <Route path="/about" element={<About />} />
+                <Route path="/blog" element={<Blog />} />
                 <Route index element={<Home />} />
             </Routes>
         </>
