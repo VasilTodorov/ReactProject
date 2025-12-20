@@ -9,7 +9,7 @@ export default function IsAuthenticated() {
     {
         //return <WindowSpinner/>;//or spinner
         return (<div className="flex justify-center items-center h-screen">
-            <WindowSpinner/>
+            <p>Loading...</p>
         </div>)
          
     }

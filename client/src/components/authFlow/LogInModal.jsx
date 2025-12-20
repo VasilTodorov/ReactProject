@@ -16,7 +16,7 @@ export default function LogInModal() {
         //console.log(typeof loginHandler);
         try {
             const data = await loginHandler(state);
-            console.log("Login submitted:", data);
+            //console.log("Login submitted:", data);
             onCloseHandler();
         } catch (err) {
             console.error("Login failed:", err);

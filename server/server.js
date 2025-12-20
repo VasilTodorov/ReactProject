@@ -1356,9 +1356,9 @@
                 "date": "Mar 16, 2024",
                 "datetime": "2024-03-16",
                 "author": {
-                    "name": "Alex Johnson",
-                    "email": "alex.johnson@example.com",
-                    "urlProfile": "/profile/alex-johnson"
+                    "name": "George Tatazov",
+                    "email": "george@abv.bg",
+                    "urlProfile": "/profile/george@abv.bg/1234"
                 }
             },
             "5e6f7g8h" : {
@@ -1370,27 +1370,41 @@
                 "date": "Apr 02, 2024",
                 "datetime": "2024-04-02",
                 "author": {
-                    "name": "Maria Gomez",
-                    "email": "maria.gomez@example.com",
-                    "urlProfile": "/profile/maria-gomez"
+                    "name": "George Tatazov",
+                    "email": "george@abv.bg",
+                    "urlProfile": "/profile/george@abv.bg/1234"
                 }
             },
             "9i0j1k2l" : {
                 "_id": "9i0j1k2l",
-                "_ownerId" : "847ec027-f659-4086-8032-5173e2f9c93a",
+                "_ownerId" : "35c62d76-8152-4626-8712-eeb96381bea8",
                 "title": "UI/UX Design Basics",
                 "description": "Learn design principles, wireframing, and user-centered design techniques.",
                 "category": "Design",
                 "date": "May 10, 2024",
                 "datetime": "2024-05-10",
                 "author": {
-                    "name": "Tom Cook",
-                    "email": "tom.cook@example.com",
-                    "urlProfile": "/profile/tom-cook"
+                    "name": "Peter Popinz",
+                    "email": "george@abv.bg",
+                    "urlProfile": "/profile/peter@abv.bg/1111"
                 }
             }
         },
-        profiles: {}
+        profiles: {
+            "1234" : {
+                "_id" : "1234",
+                "_ownerId" : "847ec027-f659-4086-8032-5173e2f9c93a",
+                "fullName" : "George Tatazov",
+                "age" : "32"
+            },
+            "1111" : {
+                "_id" : "1111",
+                "_ownerId" : "35c62d76-8152-4626-8712-eeb96381bea8",
+                "fullName" : "Peter Popinz",
+                "age" : "45",
+                "phone" : "77712349"
+            }
+        }
     };
     var rules$1 = {
     	users: {

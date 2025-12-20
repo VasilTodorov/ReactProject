@@ -35,9 +35,7 @@ export default function About() {
       <p className="mb-4 text-gray-300 leading-relaxed">
         This application demonstrates modern web technologies including React.js, client-side routing, authentication, and CRUD operations, with a focus on usability and responsive design.
       </p>
-      <a href="#contact" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
-        Contact Us
-      </a>
+      
     </div>
   </div>
 </section>

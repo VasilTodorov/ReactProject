@@ -53,7 +53,7 @@ export default function Blog() {
                 description={skill.description}
                 author={skill.author?.name}
                 email={skill.author?.email}
-                //urlProfile={skill.author?.urlProfile}
+                urlProfile={skill.author?.urlProfile}
                 />
             ))}
             </div>}

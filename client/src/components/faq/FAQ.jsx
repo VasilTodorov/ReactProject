@@ -17,7 +17,7 @@ export default function FAQ() {
         {/* FAQ Item 2 */}
         <FAQItem 
             question={"Do I need an account to view skills?"} 
-            answer={"No. You don't need to be logged in to view skill offers on the platform."}
+            answer={"No. You don't need to be logged in to view skill offers on the platform.But you do need to be logged in to view others profiles"}
         />        
 
         {/* FAQ Item 3 */}

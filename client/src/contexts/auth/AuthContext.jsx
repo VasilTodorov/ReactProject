@@ -100,7 +100,7 @@ export function AuthProvider({ children }) {
     };
     
     const registerHandler = async (myData) => {
-        console.log("start of registration");
+        //console.log("start of registration");
         try {                        
             const {email, password , ...editableData} = myData;
             const dataToRegister = await request( "users/register"

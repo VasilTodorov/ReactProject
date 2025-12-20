@@ -36,8 +36,13 @@ export default function Article(
               </div>
               <div className="relative mt-8 flex items-center gap-x-4 justify-self-end">
                 <div className="text-sm/6">
-                  <p className="font-semibold text-gray-900">                    
-                        <span>{author}</span>
+                  <p className="font-semibold text-gray-900 hover:text-gray-600">
+                    <Link
+                      to= {urlProfile}
+                    >
+                      <span>{author}</span>
+                    </Link>                    
+                        
                                         
                   </p>
                   <p className="text-gray-600">{email}</p>

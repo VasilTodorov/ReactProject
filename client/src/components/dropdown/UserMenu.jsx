@@ -28,7 +28,24 @@ export default function UserMenu({
             </Link>
           </MenuItem>
         </div>
-
+        <div className="py-1">
+          <MenuItem>
+            <Link
+                to = "/skills/mine"
+                className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden"
+            >
+              My Skills
+            </Link>
+          </MenuItem>
+          <MenuItem>
+            <Link
+                to = "/skills/create"
+                className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden"
+            >
+              Add Skill
+            </Link>
+          </MenuItem>
+        </div>
         <div className="py-1">
           <MenuItem>
             <Link

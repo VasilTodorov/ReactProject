@@ -33,7 +33,7 @@ export default function SignUpModal() {
                     description: state.description,
                     password: state.password
                 });
-                console.log("Register submitted:", data);
+                //console.log("Register submitted:", data);
                 onCloseHandler();
             }
             catch (err) {
