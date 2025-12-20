@@ -1,6 +1,6 @@
-import { useAuth } from "../contexts/auth/AuthContext";
+import { useAuth } from "../../contexts/auth/AuthContext";
 import { Navigate, Outlet } from "react-router";
-import WindowSpinner from "../spineer/WindowSpinner";
+import WindowSpinner from "../spineers/WindowSpinner";
 
 export default function IsAuthenticated() {
     const { isAuthenticated, user, loading } = useAuth();

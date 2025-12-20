@@ -2,8 +2,8 @@ import LogInModal from "./LogInModal";
 import { useState } from "react";
 import SignUpModal from "./SignUpModal";
 import { useContext } from "react";
-import CloseContext from "../contexts/close/CloseContext";
-import { useAuth } from "../contexts/auth/AuthContext";
+import CloseContext from "../../contexts/close/CloseContext";
+import { useAuth } from "../../contexts/auth/AuthContext";
 import EditModal from "./EditModal";
 
 export default function AuthFlowModal() {

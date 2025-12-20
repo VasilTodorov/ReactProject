@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useContext } from "react";
-import CloseContext from "../contexts/close/CloseContext";
-import { useAuth } from "../contexts/auth/AuthContext";
+import CloseContext from "../../contexts/close/CloseContext";
+import { useAuth } from "../../contexts/auth/AuthContext";
 
 export default function SignUpModal() {
     const { registerHandler } = useAuth();
@@ -9,7 +9,7 @@ export default function SignUpModal() {
     const [state, setState] = useState({
         fullName: "",
         email: "",
-        skills: "",
+        description: "",
         password: "",
         confirmPassword: ""
     });
@@ -21,9 +21,18 @@ export default function SignUpModal() {
             alert("Passwords do not match!");
             return;
         }
+        if (!state.password || !state.email) {
+            alert("Passwords and email are required!");
+            return;
+        }
         else {
             try{
-                const data = await registerHandler(state);
+                const data = await registerHandler({                                        
+                    fullName: state.fullName,
+                    email: state.email,
+                    description: state.description,
+                    password: state.password
+                });
                 console.log("Register submitted:", data);
                 onCloseHandler();
             }
@@ -65,9 +74,9 @@ export default function SignUpModal() {
                         className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600"
                     />
                     <textarea
-                        name="skills"
+                        name="description"
                         placeholder="Describe your skills (e.g. React, Node, UI/UX...)"
-                        value={state.skills}
+                        value={state.description}
                         onChange={onChangeHandler}
                         rows={4}
                         className="border rounded px-3 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-purple-600"

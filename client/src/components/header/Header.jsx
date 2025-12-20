@@ -3,10 +3,10 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router";
 //import LogInModal from "../login/LoginModal.jsx";
 import AuthFlowModal from "../authFlow/AuthFlowModal.jsx";
-import CloseContext from "../contexts/close/CloseContext.js";
-import { useAuth } from "../contexts/auth/AuthContext.jsx";
+import CloseContext from "../../contexts/close/CloseContext.js";
+import { useAuth } from "../../contexts/auth/AuthContext.jsx";
 import UserMenu from "../dropdown/UserMenu.jsx";
-import SmallSpinner from "../spineer/SmallSpinner.jsx";
+import SmallSpinner from "../spineers/SmallSpinner.jsx";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

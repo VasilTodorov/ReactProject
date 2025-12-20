@@ -1,6 +1,6 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { AuthContext,useAuth } from '../contexts/auth/AuthContext'
+import { AuthContext,useAuth } from '../../contexts/auth/AuthContext'
 import { Link } from "react-router";
 
 export default function UserMenu({
@@ -21,14 +21,6 @@ export default function UserMenu({
         <div className="py-1">
           <MenuItem>
             <Link
-               
-              className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden"
-            >
-              Edit
-            </Link>
-          </MenuItem>
-          <MenuItem>
-            <Link
               to="/Profile"
               className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden"
             >
@@ -36,42 +28,7 @@ export default function UserMenu({
             </Link>
           </MenuItem>
         </div>
-        <div className="py-1">
-          <MenuItem>
-            <Link
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden"
-            >
-              Archive
-            </Link>
-          </MenuItem>
-          <MenuItem>
-            <Link
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden"
-            >
-              Move
-            </Link>
-          </MenuItem>
-        </div>
-        <div className="py-1">
-          <MenuItem>
-            <Link
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden"
-            >
-              Share
-            </Link>
-          </MenuItem>
-          <MenuItem>
-            <Link
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden"
-            >
-              Add to favorites
-            </Link>
-          </MenuItem>
-        </div>
+
         <div className="py-1">
           <MenuItem>
             <Link

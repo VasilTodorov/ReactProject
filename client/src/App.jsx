@@ -5,7 +5,7 @@ import Home from "./components/home/Home"
 import About from "./components/about/About"
 import Profile from "./components/profile/Profile"
 import IsAuthenticated from "./components/route-guard/IsAuthenticated"
-import WindowSpinner from "./components/spineer/WindowSpinner";
+import WindowSpinner from "./components/spineers/WindowSpinner";
 
 function App() {
     //const [count, setCount] = useLocalStorage(0)

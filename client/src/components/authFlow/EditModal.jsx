@@ -1,6 +1,6 @@
 import { useState, useContext, useEffect } from "react";
-import CloseContext from "../contexts/close/CloseContext";
-import { useAuth } from "../contexts/auth/AuthContext";
+import CloseContext from "../../contexts/close/CloseContext";
+import { useAuth } from "../../contexts/auth/AuthContext";
 
 export default function EditModal() {
   const { user,isAuthenticated, registerHandler } = useAuth();

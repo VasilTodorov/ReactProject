@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useAuth } from "../contexts/auth/AuthContext";
+import { useAuth } from "../../contexts/auth/AuthContext";
 import { useContext } from "react";
-import CloseContext from "../contexts/close/CloseContext";
+import CloseContext from "../../contexts/close/CloseContext";
 
 export default function LogInModal() {
     const { loginHandler } = useAuth();
